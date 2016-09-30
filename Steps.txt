@@ -1,0 +1,10 @@
+1) On Github create blank repository SpringOnGoogle
+2) Clone repository on PC (via visual client)
+3) create idea project C:\Users\an.yudaichev\Desktop\Diplom\SpringOnGoogle
+4) add framework support Google App Engine, Maven, Spring MVC
+5) push root folder to git
+6) into artifacts add libraries to webinf lib folder
+7) use Google App Engine Dev for local testing
+8) should be created separate folder for jsp pages - otherwise error
+9) JDK should be set to 7 -> download jdk & add
+10) choose Google App Deployment - deploy
