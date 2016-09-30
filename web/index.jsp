@@ -1,16 +1,24 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: an.yudaichev
-  Date: 30.09.2016
-  Time: 13:44
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>--%>
+</head>
+<body>
+<div class="container">
+  <form role="form" class="form-horizontal" action="/login" method="post">
+    <h3>Try To Login</h3>
+
+    <input class="form-control form-group" type="text" name="Id">
+    <input class="form-control form-group" type="text" name="Password">
+    <input type="submit" class="btn btn-primary" value="Login">
+  </form>
+</div>
+
+<%--<script>--%>
+  <%--$('.selectpicker').selectpicker();--%>
+<%--//</script>--%>
+</body>
 </html>
