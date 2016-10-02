@@ -9,7 +9,7 @@
 <body>
 <div class="container">
   <form role="form" class="form-horizontal" action="/login" method="post">
-    <h3>Try to Login</h3>
+    <h3>Try to Login z</h3>
 
     <input class="form-control form-group" type="text" name="login">
     <input class="form-control form-group" type="text" name="password">
