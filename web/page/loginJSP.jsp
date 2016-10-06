@@ -7,11 +7,13 @@
 <body>
 
 <c:if test="${authorized eq true}">
-    Authorized !
+    <h2> Authorized ! </h2> <br>
+    Login is ${log} <br>
+    Password is ${pass}
 </c:if>
 
 <c:if test="${authorized eq false}">
-    Authorization Error
+    <h2>Authorization Error</h2>
 </c:if>
 
 </body>
