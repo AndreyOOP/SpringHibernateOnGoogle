@@ -1,6 +1,6 @@
 package Files;
 
-import com.google.appengine.api.utils.SystemProperty;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,32 +9,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.util.HashMap;
-import java.util.Map;
+import javax.persistence.PersistenceContext;
 
 @Controller
 public class LoginController {
 
+//    @Autowired
+//    private EntityManagerFactory emf;
+
+    @PersistenceContext
     private EntityManager em;
 
     @RequestMapping(value = "/")
     public String index(){
 
-//        em initialization, should be singleton but just for test
-        Map<String, String> properties = new HashMap();
-
-        if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production) {
-
-            properties.put("javax.persistence.jdbc.driver", "com.mysql.jdbc.GoogleDriver");
-            properties.put("javax.persistence.jdbc.url"   , System.getProperty("cloudsql.url"));
-        } else {
-            properties.put("javax.persistence.jdbc.driver", "com.mysql.jdbc.Driver");
-            properties.put("javax.persistence.jdbc.url"   , System.getProperty("cloudsql.url.dev"));
-        }
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Demo", properties);
-        em = emf.createEntityManager();
+//        em = emf.createEntityManager();
 
         return "index";
     }
@@ -52,8 +41,8 @@ public class LoginController {
         if( password.contentEquals( te.getPassword())){
 
             model.addAttribute("authorized", true);
-            model.addAttribute("log"       , login);
-            model.addAttribute("pass"      , password);
+            model.addAttribute("log"       , login + "x");
+            model.addAttribute("pass"      , password + "x");
         } else {
 
             model.addAttribute("authorized", false);
